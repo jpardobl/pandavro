@@ -79,3 +79,6 @@ def to_avro(file_path, df, schema=None):
     with open(file_path, 'wb') as f:
         fastavro.writer(f, schema=schema,
                         records=df.to_dict('records'))
+        
+def infer_schema(df):
+    return __schema_infer(df)
